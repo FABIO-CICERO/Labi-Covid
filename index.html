@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link />
+    <link rel="icon" href="images/covid1.png">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Arimo:wght@700&family=Noto+Sans+TC:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Labi-Covid</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+  </head>
+  <body>
+    <input type="hidden" id="fase" />
+    <div class="button">
+      <button
+        type="submit"
+        class="neon neon1"
+        onClick="window.location.reload();"
+      >
+        <strong><i class="fas fa-play"></i> &nbsp; Jogar</strong>
+      </button>
+      <button type="button" class="neon volume" id="audio">
+        <strong>&nbsp; Som</strong>
+      </button>
+
+      <!-- <button type="submit" class="neon" id="pausar">
+        <strong><i class="fas fa-pause"></i> Pausar</strong>
+      </button> -->
+
+      <button type="submit" class="neon" id="tutorial">
+        <strong
+          ><i class="fas fa-info-circle" id="muted"></i> &nbsp; Tutorial</strong
+        >
+      </button>
+    </div>
+
+    <div>
+      <h1>Labi-Covid <i class="fas fa-virus"></i></h1>
+      <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <!-- codigo da seta - so aparece no mobile -->
+    <div class="arrow-key-container">
+      <div class="arrow-key up" data-key="38"></div>
+      <br />
+      <div class="arrow-key left" data-key="37"></div>
+      <div class="arrow-key down" data-key="40"></div>
+      <div class="arrow-key right" data-key="39"></div>
+    </div>
+
+    <!-- PopUp inicial -->
+    <div id="bkgOverlay" class="backgroundOverlay"></div>
+    <div id="delayedPopup" class="delayedPopupWindow">
+      <div class="sidepop">
+        <a href="#" id="btnClose"><i class="fas fa-times"></i></a>
+      </div>
+      <!-- lado esquerdo da decriçao do popup -->
+      <div class="txtright">
+        <p>
+          Bem vindo ao Labi-Covid! Fuja do virús da Covid-19 usando
+          <span>álcool em gel</span> e tomando as <span>vacinas.</span>
+        </p>
+        <br />
+        <p>Veja o Tutorial para começar.</p>
+        <br />
+        <p>Boa sorte! 😀</p>
+      </div>
+    </div>
+
+    <!-- musica de fundo -->
+    <!-- <audio loop autoplay>
+      <source src="sounds/ambiente.mp3" type="audio/mp3"> 
+    </audio>  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- scripts no final para carregar tudo primeiro e os scripts dps -->
+    <script src="src/Game.js" type="module"></script>   
+    
+    <!-- <script src="sweetalert2.all.min.js"></script> -->
+    <script src="script.js" type="module"></script>
+    <script>
+      // FUNÇÃO DO POP UP DO TUTORIAL (API do Sweet Alert)
+      $("#tutorial").on("click", function (e) {
+        e.preventDefault();
+        var form = $(this).parents("form");
+        Swal.fire({
+          imageUrl: "images/tutorial.png",
+          padding: "0.5rem",
+          imageWidth: 500,
+          imageHeight: 230, //um pouco distorcido no mobile altura
+          confirmButtonColor: "#2215d6",
+          imageAlt: "Custom image",
+          background: "#1a0c6e",
+          backdrop: `
+      rgba(0,0,0,0.5)
+      url("images/personagemGif.gif")
+      left top
+      no-repeat
+    `,
+        });
+      });
+    </script>
+  </body>
+</html>

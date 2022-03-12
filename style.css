@@ -1,0 +1,231 @@
+:root {
+  --default-color: #fff;
+  --default-black: #000;
+  --primary-color: #1a0c6e;
+  --second-color: #d119ff;
+  --hover-color: #48084e;
+  --strong-color: #2215d6;
+  --grey--color: #808080;
+  --virus-color: #f11d1d;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(26, 10, 88, 0.575) 0%,
+      rgba(12, 12, 14, 0.692) 100%
+    ),
+    url(images/background.jpg);
+  background-size: cover;
+  font-family: "Comic Neue", sans-serif;
+}
+#gameCanvas {
+  display: flex;
+  box-shadow: 10px 10px 20px var(--default-black);
+}
+h1 {
+  margin-top: 5px;
+  margin-bottom: 1%;
+  text-align: center;
+  color: var(--default-color);
+}
+h1 i {
+  color: var(--virus-color);
+}
+.button {
+  margin-right: 1.4%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Noto Sans TC";
+}
+.neon1 {
+  margin-top: 45px;
+}
+.neon:hover,
+#audio:hover {
+  transform: translateX(-7px);
+}
+.neon,
+#audio {
+  margin-bottom: 8%;
+  min-width: 150px;
+  border: none;
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--default-color);
+  border: var(--strong-color) 2px solid;
+  background-color: var(--strong-color);
+  box-shadow: inset 0 0 32px 0 var(--strong-color),
+    0 0 32px 0 var(--strong-color);
+  text-shadow: 0 0 8px var(--grey--color), 0 0 32px;
+  transition: 0.3s;
+}
+.neon::before,
+.volume::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0%;
+  background-color: var(--primary-color);
+  transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+  filter: blur(64px);
+  opacity: 0.7;
+  font-weight: 700;
+  pointer-events: none;
+}
+button:hover {
+  color: var(--grey--color);
+  background-color: var(--hover-color);
+}
+/*Janela inicial do pop up*/
+.backgroundOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  z-index: 101;
+  display: none;
+}
+.delayedPopupWindow {
+  display: none;
+  position: fixed;
+  width: auto;
+  max-width: 480px;
+  height: 290px;
+  top: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+  background-color: var(--strong-color);
+  border-radius: 5px;
+  z-index: 102;
+  padding: 22px 22px;
+}
+.sidepop {
+  width: 10%;
+  float: right;
+}
+/*   botão de fechar (janela popup)  */
+.fa-times{
+  display: block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: 'Arimo';
+  font-weight: 900;
+  color: var(--second-color);
+  transition: 0.3s ease;
+}
+.fa-times:hover {
+  transform: rotateX(180deg);
+  color: var(--virus-color);
+  transition: 0.3s ease;
+}
+.txtright {
+  width: 97%;
+  padding: 1%;
+  color: var(--default-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+/* @media - serve para setar a resposividade em telas menores (funcina em smartphone) */
+@media (max-width: 998px) {
+  #gameCanvas {
+    position: relative;
+    display: block;
+    height: 35vh;
+    max-width: 345px;
+  }
+  .button {
+    position: absolute;
+    padding-top: 360px;
+    position: absolute;
+    display: flex;
+    text-align: center;
+  }
+  #audio {
+    display: none;
+  }
+
+  /* codigo do estilo das setas  */
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  .arrow-key-container {
+    margin-top: 510px;
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+  }
+  .arrow-key {
+    align-items: center;
+    background: var(--default-black);
+    border-radius: 6px;
+    box-shadow: -1px 1px 0 var(--grey--color), -2px 2px 0, -3px 3px 0,
+      -4px 4px 0;
+    color: var(--strong-color);
+    display: inline-flex;
+    font-size: 30px;
+    font-weight: bold;
+    height: 75px;
+    justify-content: center;
+    margin: 5px;
+    transform: translate3d(0, 0, 0);
+    transition: box-shadow 0.1s linear, transform 0.1s linear;
+    width: 75px;
+  }
+  .arrow-key:active,
+  .arrow-key.press {
+    transform: translate3d(-3px, 3px, 0);
+  }
+  .arrow-key.left:before {
+    content: "\2190";
+  }
+  .arrow-key.up:before {
+    content: "\2191";
+  }
+  .arrow-key.down:before {
+    content: "\2193";
+  }
+  .arrow-key.right:before {
+    content: "\2192";
+  }
+  .delayedPopupWindow {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    max-width: 300px;
+    max-height: 200px;
+  }
+  .txtright {
+    width: 97%;
+    padding: 1%;
+    color: var(--default-color);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
