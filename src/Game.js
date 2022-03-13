@@ -85,13 +85,13 @@ function drawGameEnd() {
       setTimeout(function () {
         if (tileMap.fase == 1) {
           /*parametros passados pela URL, chama a nova fase(mapa)*/
-          location.href = "/?fase=2";
+          location.href = "/Labi-Covid/?fase=2"; // /Labi-Covid(Pasta) *passar para url o caminho*
         } else if (tileMap.fase == 2) {
-          location.href = "/?fase=3";
+          location.href = "/Labi-Covid/?fase=3";
         }
         //mais fases
         else if (tileMap.fase==3){
-          location.href = '/?fase=4';}
+          location.href = '/Labi-Covid/?fase=4';}
         // }else if(tileMap.fase == 3) {
         //   location.href = '/?fase=1';
         // }
