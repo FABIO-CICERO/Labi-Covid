@@ -77,7 +77,7 @@ export default class TileMap {
         ];
       } else if (this.fase == 3) {
 
-        //imagem parede fase 2
+        //imagem parede fase 3
         this.wall.src = "images/parede3.png";
 
         //19x16 fase 3 (7 inimigos - 4 vacinas)
@@ -101,8 +101,8 @@ export default class TileMap {
         ];
       } else if (this.fase == 4) {
     
-        // imagem parede fase 3
-        this.wall.src = "images/parede2.png";
+        // imagem parede fase 4
+        this.wall.src = "images/parede4.png";
 
         //22x18 fase 4 (10 inimigos - 3 vacinas)
         this.map = [
