@@ -69,6 +69,22 @@ function drawGameEnd() {
     let text = "VOCÊ VENCEU A PANDEMIA!🥳";
     if (gameOver) {
       text = "O COVID-19 TE PEGOU! 😷";
+
+      //Função para quando perder em qualquer fase, ele retorna para a fase 1
+      setTimeout(function () {
+        if (tileMap.fase == 1) {
+          /*parametros passados pela URL, chama a nova fase(mapa)*/
+          location.href = "/Labi-Covid/?fase=1"; // /Labi-Covid(Pasta) *passar para url o caminho*
+        } else if (tileMap.fase == 2) {
+          location.href = "/Labi-Covid/?fase=1";
+        }
+        //mais fases
+        else if (tileMap.fase==3){
+          location.href = '/Labi-Covid/?fase=1';}
+        // }else if(tileMap.fase == 3) {
+        //   location.href = '/?fase=1';
+        // }
+      }, 2250);
     }
 
     ctx.fillStyle = "#2215d6";
