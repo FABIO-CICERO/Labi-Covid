@@ -80,7 +80,11 @@ function drawGameEnd() {
         }
         //mais fases
         else if (tileMap.fase==3){
-          location.href = '/Labi-Covid/?fase=1';}
+          location.href = '/Labi-Covid/?fase=1';
+        }
+        else if (tileMap.fase==4){
+          location.href = '/Labi-Covid/?fase=1';
+        }
         // }else if(tileMap.fase == 3) {
         //   location.href = '/?fase=1';
         // }
@@ -111,7 +115,7 @@ function drawGameEnd() {
         // }else if(tileMap.fase == 3) {
         //   location.href = '/?fase=1';
         // }
-      }, 1000); //Delay da troca de fase
+      }, 1200); //Delay da troca de fase
     }
   }
 }
