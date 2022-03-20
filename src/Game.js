@@ -16,16 +16,6 @@ let gameWin = false;
 var gameOverSound = new Audio("sounds/fim.wav"); //era const, mudar pra var para mudar o valor do som para true
 var gameWinSound = new Audio("sounds/gameWin.wav");
 
-// let stopButton = document.querySelector("#audio");
-
-// stopButton.onclik = ()=>{
-// gameOverSound.pause()
-// gameWinSound.pause()
-// }
-
-// gameOverSound.muted = true;
-// gameWinSound.muted = true; //muta o som do gameOver e gameWin
-
 function gameLoop() {
   tileMap.draw(ctx);
   drawGameEnd();
@@ -77,17 +67,13 @@ function drawGameEnd() {
           location.href = "/Labi-Covid/?fase=1"; // /Labi-Covid(Pasta) *passar para url o caminho*
         } else if (tileMap.fase == 2) {
           location.href = "/Labi-Covid/?fase=1";
-        }
-        //mais fases
-        else if (tileMap.fase==3){
+        } else if (tileMap.fase == 3){
           location.href = '/Labi-Covid/?fase=1';
         }
-        else if (tileMap.fase==4){
+        else if (tileMap.fase == 4){
           location.href = '/Labi-Covid/?fase=1';
-        }
-        // }else if(tileMap.fase == 3) {
-        //   location.href = '/?fase=1';
-        // }
+        } else if(tileMap.fase == 5) {
+          location.href = '/Labi-Covid/?fase=1';}
       }, 2250);
     }
 
@@ -108,13 +94,11 @@ function drawGameEnd() {
           location.href = "/Labi-Covid/?fase=2"; // /Labi-Covid(Pasta) *passar para url o caminho*
         } else if (tileMap.fase == 2) {
           location.href = "/Labi-Covid/?fase=3";
+        } else if (tileMap.fase == 3){
+          location.href = '/Labi-Covid/?fase=4';
+        } else if(tileMap.fase == 4) {
+          location.href = '/Labi-Covid/?fase=5';
         }
-        //mais fases
-        else if (tileMap.fase==3){
-          location.href = '/Labi-Covid/?fase=4';}
-        // }else if(tileMap.fase == 3) {
-        //   location.href = '/?fase=1';
-        // }
       }, 1200); //Delay da troca de fase
     }
   }
