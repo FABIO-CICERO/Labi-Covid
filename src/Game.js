@@ -13,6 +13,11 @@ const enemies = tileMap.getEnemies(velocity);
 
 let gameOver = false;
 let gameWin = false;
+
+let textOptionsWin = ["Boa! Você usou alcool em gel 🤩", "Parabéns, você venceu 🤗", "Foi por pouco hein! 😱", "✨ Você venceu a Pandemia ✨", "🎇 Tomou todas as vacinas hein 🎇"];
+let textOptions = ["A Pandemia ainda não acabou 😮", "Parece que você não lavou as mãos! 🧼", "A Pandemia te pegou 😷"];
+let text = " ";
+
 var gameOverSound = new Audio("sounds/fim.wav"); //era const, mudar pra var para mudar o valor do som para true
 var gameWinSound = new Audio("sounds/gameWin.wav");
 
@@ -56,9 +61,13 @@ function pause() {
 function drawGameEnd() {
   //mensagens de venceu ou perdeu
   if (gameOver || gameWin) {
-    let text = "VOCÊ VENCEU A PANDEMIA!🥳";
+
+    //funcao aleatoria que mostra a mensagem de game win aleatoriamente
+    text = textOptionsWin[Math.floor(Math.random() * textOptionsWin.length)];;
     if (gameOver) {
-      text = "O COVID-19 TE PEGOU! 😷";
+
+      //funcao aleatoria que mostra a mensagem de game over aleatoriamente
+      text = textOptions[Math.floor(Math.random() * textOptions.length)];;
 
       //Função para quando perder em qualquer fase, ele retorna para a fase 1
       setTimeout(function () {
