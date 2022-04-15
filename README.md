@@ -1,10 +1,10 @@
 ## Labi-Covid
 
-Conheça e se divirta jogando o **[Labi-Covid]()**. Um jogo desenvolvido especialmente para o **público infantil**, ainda no período de pandemia, 
-para **concientizar e ao mesmo tempo divertir** nossas crianças sobre os cuidados em relação a **[Covid-19]()**.
+Conheça e se divirta jogando o **[Labi-Covid](https://fabio-cicero.github.io/Labi-Covid/)**. Um jogo desenvolvido especialmente para o **público infantil**, ainda no período de pandemia, 
+para **concientizar e ao mesmo tempo divertir** nossas crianças sobre os cuidados em relação a **[Covid-19](https://covid.saude.gov.br/)**.
 
 Desenvolvido como forma de **Trabalho de conclusão de curso (TCC)**, do curso Tecnólogo em **Análise e Desenvolvimento de Sistemas** presente na 
-Faculdade Professor Antônio Seabra, mais conhecida como **[Fatec de Lins]()**
+Faculdade Professor Antônio Seabra, mais conhecida como **[Fatec de Lins](http://www.fateclins.edu.br/web/)**
 
 O objetivo do presente trabalho é de ....
 
@@ -73,4 +73,5 @@ o game funciona em qualquer dispositivo, seja ele **smartphone, TV e desktop**.
   }
 }  
 ~~~~
+## Se divirta
 Por fim, você pode pode conferir o jogo e se divertir, enquanto tenta fugir da covid-19 e sobreviver a pandemia!
