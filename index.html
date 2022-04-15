@@ -91,26 +91,29 @@
     <!-- <script src="sweetalert2.all.min.js"></script> -->
     <script src="script.js" type="module"></script>
     <script>
-      // FUNÇÃO DO POP UP DO TUTORIAL (API do Sweet Alert)
-      $("#tutorial").on("click", function (e) {
-        e.preventDefault();
-        var form = $(this).parents("form");
-        Swal.fire({
-          imageUrl: "images/tutorial.png",
-          padding: "0.5rem",
-          imageWidth: 500,
-          imageHeight: 230, //um pouco distorcido no mobile altura
-          confirmButtonColor: "#2215d6",
-          imageAlt: "Custom image",
-          background: "#1a0c6e",
-          backdrop: `
-      rgba(0,0,0,0.5)
-      url("images/personagemGif.gif")
-      left top
-      no-repeat
-    `,
+      //carrega tudo isso APÓS o Html carregar
+      $(document).ready(function () {
+        // FUNÇÃO DO POP UP DO TUTORIAL (API do Sweet Alert)
+        $("#tutorial").on("click", function (e) {
+          e.preventDefault();
+          var form = $(this).parents("form");
+          Swal.fire({
+            imageUrl: "images/tutorial.png",
+            padding: "0.5rem",
+            imageWidth: 500,
+            imageHeight: 230, //um pouco distorcido no mobile altura
+            confirmButtonColor: "#2215d6",
+            imageAlt: "Custom image",
+            background: "#1a0c6e",
+            backdrop: `
+        rgba(0,0,0,0.5)
+        url("images/personagemGif.gif")
+        left top
+        no-repeat
+      `,
+          });
         });
-      });
+      });  
     </script>
   </body>
 </html>
