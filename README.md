@@ -73,5 +73,6 @@ o game funciona em qualquer dispositivo, seja ele **smartphone, TV e desktop**.
   }
 }  
 ~~~~
-## Se divirta
-Por fim, você pode pode conferir o jogo e se divertir, enquanto tenta fugir da covid-19 e sobreviver a pandemia!
+## Divirta-se
+Você pode conferir o jogo e se divertir, enquanto tenta **sobreviver a uma das 5 fases que aumentam a dsificuldade a cada nivel e vencer a covid-19** de uma vez por todas!    
+>>> **[Jogue Agora mesmo](https://fabio-cicero.github.io/Labi-Covid/)**
