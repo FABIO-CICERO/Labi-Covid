@@ -16,7 +16,12 @@ let gameWin = false;
 
 let textOptionsWin = ["Boa! Você usou alcool em gel 🤩", "Parabéns, você venceu 🤗", "Foi por pouco hein! 😱", "✨ Você venceu a Pandemia ✨", "🎇 Tomou todas as vacinas hein 🎇"];
 let textOptions = ["A Pandemia ainda não acabou 😮", "Parece que você não lavou as mãos! 🧼", "A Pandemia te pegou 😷"];
+
 let text = " ";
+let winMessage  = " ";
+let subWinMessage  = " ";
+let overMessage  = " ";
+let subOverMessage  = " ";
 
 var gameOverSound = new Audio("sounds/fim.wav"); //era const, mudar pra var para mudar o valor do som para true
 var gameWinSound = new Audio("sounds/gameWin.wav");
@@ -58,16 +63,23 @@ function pause() {
   return !pacman.madeFirstMove || gameOver || gameWin;
 }
 
+//funcao aleatoria que mostra a mensagem de game over aleatoriamente
+overMessage = textOptions[Math.floor(Math.random() * textOptions.length)];
+
+//funcao aleatoria que mostra a mensagem de game win aleatoriamente
+winMessage = textOptionsWin[Math.floor(Math.random() * textOptionsWin.length)];
+
 function drawGameEnd() {
   //mensagens de venceu ou perdeu
   if (gameOver || gameWin) {
-
-    //funcao aleatoria que mostra a mensagem de game win aleatoriamente
-    text = textOptionsWin[Math.floor(Math.random() * textOptionsWin.length)];;
-    if (gameOver) {
-
-      //funcao aleatoria que mostra a mensagem de game over aleatoriamente
-      text = textOptions[Math.floor(Math.random() * textOptions.length)];;
+    subOverMessage = winMessage;
+    //reescreve a variavel com o item aleatorio
+    text = subWinMessage;
+    
+    if (gameOver) {  
+      //insere o conteudo aleatorio da variavel 
+      subOverMessage = overMessage;
+      text = subOverMessage;
 
       //Função para quando perder em qualquer fase, ele retorna para a fase 1
       setTimeout(function () {
