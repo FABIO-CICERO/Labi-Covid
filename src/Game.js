@@ -72,7 +72,7 @@ winMessage = textOptionsWin[Math.floor(Math.random() * textOptionsWin.length)];
 function drawGameEnd() {
   //mensagens de venceu ou perdeu
   if (gameOver || gameWin) {
-    subOverMessage = winMessage;
+    subWinMessage = winMessage;
     //reescreve a variavel com o item aleatorio
     text = subWinMessage;
     
