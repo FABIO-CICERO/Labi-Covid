@@ -5,9 +5,9 @@ $(document).ready(function () {
   // MENSAGEM DO POP UP INCIAL
     //Fade in delay for the background overlay (control timing here)
     if ($("#fase").val() == 1) {
-      $("#bkgOverlay").delay(2400).fadeIn(400);
+      $("#bkgOverlay").delay(2500).fadeIn(400);
       //Fade in delay for the popup (control timing here)
-      $("#delayedPopup").delay(2000).fadeIn(400);
+      $("#delayedPopup").delay(2200).fadeIn(400);
 
       //Hide dialouge and background when the user clicks the close button
       $("#btnClose").click(function (e) {
