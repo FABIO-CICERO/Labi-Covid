@@ -1,4 +1,4 @@
-import Pacman from "./Pacman.js";
+import Juca from "./Juca.js";
 import MovingDirection from "./MovingDirection.js";
 import Enemy from "./Enemy.js";
 
@@ -218,13 +218,13 @@ export default class TileMap {
     ctx.fillRect(column * this.tileSize, row * this.tileSize, size, size);
   }
 
-  getPacman(velocity) {
+  getJuca(velocity) {
     for (let row = 0; row < this.map.length; row++) {
       for (let column = 0; column < this.map[row].length; column++) {
         let tile = this.map[row][column];
         if (tile === 4) {
           this.map[row][column] = 0;
-          return new Pacman(
+          return new Juca(
             column * this.tileSize,
             row * this.tileSize,
             this.tileSize,

@@ -2,7 +2,7 @@ import Enemy from "./Enemy.js";
 import MovingDirection from "./MovingDirection.js";
 // O ponto [.] significa que está no mesmo diretório, seguido por barra [/]
 
-export default class Pacman {
+export default class Juca {
   constructor(x, y, tileSize, velocity, tileMap) {
     this.x = x;
     this.y = y;
