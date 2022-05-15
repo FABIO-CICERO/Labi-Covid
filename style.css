@@ -325,7 +325,7 @@ link Temas: https://codebyzach.github.io/pace/ */
   100% { transform: translate(-32px, 0); transform: translate(-32px, 0); }
 }
 /* pagina em desenvolvimento -- estilos */
-.desenvolvimento {
+body.desenvolvimento {
   background-image: linear-gradient(
       to right,
       rgba(3, 1, 14, 0.794) 0%,
@@ -347,6 +347,16 @@ link Temas: https://codebyzach.github.io/pace/ */
 #animationoutput {
   display: flex;
 }
+.neon.neon-desenvolvimento {
+  background-color: var(--primary-color);
+  z-index: 999;
+  display: block;
+  margin: 20px auto;
+}
+#home-link {
+  text-decoration: none;
+  color: var(--default-color);
+}
 #confetti-desenvolvimento {
   position: fixed;
   top: 0;
@@ -354,4 +364,5 @@ link Temas: https://codebyzach.github.io/pace/ */
   width: 100%;
   height: 100vh;
   z-index: 0;
+  pointer-events: none;
 }
