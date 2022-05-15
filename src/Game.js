@@ -1,5 +1,10 @@
 import TileMap from "./TileMap.js";
 
+// variaveis do arquivo de confetti
+var confettiElement = document.getElementById('canvas-confetti');
+var confettiSettings = { target: confettiElement };
+var confetti = new ConfettiGenerator(confettiSettings);
+
 // define o tamanho dos blocos
 const tileSize = 32;
 // define a velocidade do Pacman
