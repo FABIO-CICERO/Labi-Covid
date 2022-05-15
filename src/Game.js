@@ -72,11 +72,16 @@ winMessage = textOptionsWin[Math.floor(Math.random() * textOptionsWin.length)];
 function drawGameEnd() {
   //mensagens de venceu ou perdeu
   if (gameOver || gameWin) {
+    //renderiza a animação de confetes
+    confetti.render();
+
     subWinMessage = winMessage;
     //reescreve a variavel com o item aleatorio
     text = subWinMessage;
     
-    if (gameOver) {  
+    if (gameOver) { 
+      //não mostra a animação de confetti 
+      confetti.clear(); 
       //insere o conteudo aleatorio da variavel 
       subOverMessage = overMessage;
       text = subOverMessage;
