@@ -43,7 +43,7 @@ $(document).ready(function () {
 
   // ANIMAÇÃO DO ICONE DE MUTAR DESMUTAR SOM
     $("#audio").click(function () {
-      $('.icone-first').hide();
+      $('.icone-first').hide()
       var audio = document.querySelector("#audio");
 
       // pega o status atual da class i (icone)
