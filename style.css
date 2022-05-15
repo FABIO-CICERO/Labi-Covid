@@ -321,3 +321,34 @@ link Temas: https://codebyzach.github.io/pace/ */
   0% { transform: none; transform: none; }
   100% { transform: translate(-32px, 0); transform: translate(-32px, 0); }
 }
+/* pagina em desenvolvimento -- estilos */
+.desenvolvimento {
+  background-image: linear-gradient(
+      to right,
+      rgba(3, 1, 14, 0.794) 0%,
+      rgba(2, 2, 5, 0.712) 100%
+    ),
+    url(images/background.jpg);
+  background-size: cover;
+}
+
+#promptanimation {
+  display: flex;
+  flex-flow: column;
+  margin-top: 200px;
+  color: var(--default-color);
+  font-family: 'Courier Prime';
+  font-size: 1.4rem;
+  z-index: 1000;
+}
+#animationoutput {
+  display: flex;
+}
+#confetti-desenvolvimento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}

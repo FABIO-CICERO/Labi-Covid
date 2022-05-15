@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labi-Covid | 2D game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/covid1.png">
+</head>
+<body class="desenvolvimento">
+    <div class="container">
+        <div id="promptanimation">
+            <h2 id="animationoutput"></h2>
+        </div>
+    </div>
+
+    <canvas id="confetti-desenvolvimento"></canvas>
+
+    <script src="confettinext.js"></script>
+
+    <script>
+        var confettiElement = document.getElementById('confetti-desenvolvimento');
+        var confettiSettings = { target: confettiElement };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+
+        finaltext = "Voltamos \xa0 em \xa0 breve!" + " " + "\xa0Em \xa0desenvolvimento...";
+        const characters =
+        "!#$%&'()*+,-./:;<=>?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        iterations = finaltext.length + 20;
+        function randomstr() {
+            n = Math.random();
+            n = n * characters.length;
+            n = Math.floor(n);
+            out = characters[n];
+            return out;
+        }
+        var text = [];
+        for (i = 0; i < finaltext.length; i++) {
+            t = [];
+            text.push(t);
+        }
+        for (i = 0; i < finaltext.length; i++) {
+            t = text[i];
+            for (j = 0; j < iterations - 20 * Math.random(); j++) {
+            t.push(randomstr());
+            }
+            t.push(finaltext[i]);
+        }
+        counter = 0;
+
+        const elemout = document.getElementById("animationoutput");
+
+        for (i = 0; i < finaltext.length; i++) {
+            const outputpart = document.createElement("div");
+            outputpart.classList.add("letters");
+            elemout.appendChild(outputpart);
+            outputlist = document.getElementsByClassName("letters");
+        }
+        function change() {
+            for (i = 0; i < finaltext.length; i++) {
+            ft = text[i];
+            if (counter < ft.length) {
+                outputlist[i].innerHTML = ft[counter];
+            } else {
+                outputlist[i].innerHTML = ft[ft.length - 1];
+            }
+            }
+            counter++;
+        }
+        const inst = setInterval(change, 150); 
+    </script>
+</body>
+</html>
