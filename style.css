@@ -237,6 +237,9 @@ button:hover {
     font-size: 1rem;
     font-weight: 700;
   }
+  #animationoutput {
+    font-size: 0.6rem;
+  }
 }
 /* Plugin do HubSpot para animação de loading */
 /* link gitHub: https://github.com/CodeByZach/pace
